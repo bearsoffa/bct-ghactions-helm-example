@@ -10,7 +10,13 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Install helm
-      run: curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash
-    - name: Print out helm
-      run: helm
+      run: sudo curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash
+    - name: Lint helm chart
+      run: helm lint
+      working-directory: ./k8s/example
+    - name: Package Helm chart
+      run: helm package example
+      working-directory: ./k8s
+    - name: Add Artifactory repository
+      run: helm repo add helm https://tbctdevops.jfrog.io/tbctdevops/helm --username ${{ secrets.artifactory_username }} --password ${{ secrets.artifactory_password }}
 
