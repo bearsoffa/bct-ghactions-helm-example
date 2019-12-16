@@ -10,7 +10,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Install helm
-      run: sudo apt install helm
-    - name: Print out directory
-      run: ls -al
+      run: curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash
+    - name: Print out helm
+      run: helm
 
