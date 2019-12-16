@@ -6,7 +6,7 @@ This solution uses GitHub secrets in **GitHub Action** to follow industry best p
 
 In an actual ***CI/CD*** pipeline there would be steps to set the package version according to an internal rule as well as make sure the version is compliant with **SemVer 2.0**. 
 
-This Repo does not cover this aspect yet.
+This repository does not cover this aspect yet.
 
 # Technical details
 
