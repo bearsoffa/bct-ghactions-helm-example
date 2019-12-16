@@ -14,7 +14,7 @@ This repository contains a basic **Helm 3** chart.
 
 The GitHub action is stored in
 
-    .github/workflows
+    .github/workflows/main.yml
 
 # Installation
 
