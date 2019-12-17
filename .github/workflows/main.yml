@@ -20,6 +20,6 @@ jobs:
     - name: Add Artifactory repository
       run: helm repo add helm https://tbctdevops.jfrog.io/tbctdevops/helm --username ${{ secrets.artifactory_username }} --password ${{ secrets.artifactory_password }}
     - name: Add helm chart to Artifactory repository
-      run: curl -H 'X-JFrog-Art-Api:${{ secrets.artifactory_apikey }}' -T example-0.1.0.tgz "https://tbctdevops.jfrog.io/tbctdevops/helm/example"
+      run: curl -H 'X-JFrog-Art-Api:${{ secrets.artifactory_apikey }}' -T example-0.1.0.tgz "https://tbctdevops.jfrog.io/tbctdevops/helm/"
       working-directory: ./k8s
 
